@@ -1,0 +1,12 @@
+<ul class="img-list">
+  <li class="list-inline-item" *ngFor="let animal of userList">
+    <div class="card-category" [style.background-image]="'url('+ animal.image_link +')'"
+ 	    [style.width.px]="600" [style.height.px]="400">
+       <div class="favorite" >
+        <fa-icon  [class.d-none] = "isActive" (click)="onFavoriteClick($event.currentTarget)" [icon]="['fas', 'heart']"></fa-icon>
+        <fa-icon class="favorite-icon d-none"  [icon]="['fas', 'heart']"></fa-icon>
+       </div>
+    </div>
+     <div class="text-bg"><div><p>Name: {{ animal.name }}</p></div> <p>Type: {{ animal.animal_type }}</p></div>
+  </li>
+</ul>
