@@ -34,6 +34,12 @@ ul li {
 
 }
 
+.text-bg p {
+  font-family: 'Stylish', sans-serif;
+  padding-top: 8px;
+
+}
+
 .favorite-icon{
   cursor: pointer;
 }

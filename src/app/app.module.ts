@@ -8,23 +8,29 @@ import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AnimalWorldComponent } from './animal-world/animal-world.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ButtonComponent } from './button/button.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimalWorldComponent,
     NavbarComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MDBBootstrapModule.forRoot()
+
   ],
   providers: [],
   bootstrap: [AppComponent]
