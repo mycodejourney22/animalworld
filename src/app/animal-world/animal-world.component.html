@@ -1,5 +1,4 @@
-<div class="container mt-5">
-  <h1 class="text-center header-text">Animal World</h1>
+
   <ul class="img-list">
     <li class="list-inline-item" *ngFor="let animal of userList">
       <div class="card-category" [style.background-image]="'url('+ animal.image_link +')'"
@@ -12,4 +11,3 @@
         <div class="text-bg"><div><p>Name: {{ animal.name }}</p></div> <p>Type: {{ animal.animal_type }}</p></div>
     </li>
   </ul>
-</div>

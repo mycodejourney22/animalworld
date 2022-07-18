@@ -1,5 +1,5 @@
-
 import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
+import { UrlHandlingStrategy } from '@angular/router';
 
 
 @Component({
@@ -19,14 +19,19 @@ export class FavoritesComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      this.arr.push(localStorage.getItem(key));
-  }
-  const mynew = localStorage.getItem("1")
-  console.log(mynew)
-  const ulList = document.querySelector(".img-list")
-  ulList.insertAdjacentHTML("afterbegin", mynew)
-
+    const ulList = document.querySelector(".img-list")
+    if (localStorage.length >= 1) {
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        this.arr.push(localStorage.getItem(key));
+      }
+      this.arr.forEach((list)=> {
+        ulList.insertAdjacentHTML("afterbegin",list)
+      })
+    }
+    else {
+      const noList = '<h2>Your favorite list is empty</h2>'
+      ulList.insertAdjacentHTML("afterbegin",noList)
+    }
 
 }}
