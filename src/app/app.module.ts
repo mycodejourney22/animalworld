@@ -17,6 +17,7 @@ import { ButtonComponent } from './button/button.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { FavoriteAnimalsComponent } from './favorite-animals/favorite-animals.component';
 
 
 
@@ -28,6 +29,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
     ButtonComponent,
     HomeComponent,
     FavoritesComponent,
+    FavoriteAnimalsComponent,
   ],
   imports: [
     BrowserModule,

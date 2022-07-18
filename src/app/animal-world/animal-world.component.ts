@@ -1,11 +1,10 @@
 import {HttpClient} from '@angular/common/http'
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-animal-world',
   templateUrl: './animal-world.component.html',
-  styleUrls: ['./animal-world.component.css'],
-  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./animal-world.component.css']
 })
 export class AnimalWorldComponent implements OnInit {
 
