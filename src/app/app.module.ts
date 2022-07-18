@@ -14,6 +14,9 @@ import { AnimalWorldComponent } from './animal-world/animal-world.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ButtonComponent } from './button/button.component';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 
@@ -23,13 +26,19 @@ import { ButtonComponent } from './button/button.component';
     AnimalWorldComponent,
     NavbarComponent,
     ButtonComponent,
+    HomeComponent,
+    FavoritesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'favorites', component: FavoritesComponent },
+    ])
 
   ],
   providers: [],

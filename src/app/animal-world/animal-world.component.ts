@@ -1,22 +1,21 @@
 import {HttpClient} from '@angular/common/http'
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-animal-world',
   templateUrl: './animal-world.component.html',
-  styleUrls: ['./animal-world.component.css']
+  styleUrls: ['./animal-world.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class AnimalWorldComponent implements OnInit {
 
   url: string = 'https://zoo-animal-api.herokuapp.com/animals/rand/5';
   userList: any;
-  isActive = false;
-  isNum = 1;
+  // isActive = false;
 
 
   constructor(private http:HttpClient) {
     this.userList=[];
-    this.isNum
 
    }
 
@@ -28,19 +27,20 @@ export class AnimalWorldComponent implements OnInit {
     this.http.get(this.url)
       .subscribe((response:any) => {
         this.userList=response
-        console.log(this.userList[0])
       })
   }
 
   onFavoriteClick(target){
-    this.isNum ++
     target.className += " d-none";
-    (target as HTMLElement).nextElementSibling.classList.remove("d-none");
-    const targetParent = (target as HTMLElement).parentElement;
-    const parent = targetParent.parentElement;
-    const newParent = (parent.parentElement.outerHTML);
-    const local = this.isNum.toString()
-    window.localStorage.setItem(local , newParent);
+    (target).nextElementSibling.classList.remove("d-none");
+    const targetParent = (target).parentElement;
+    const parent = targetParent.parentElement
+    const newParent = (parent.parentElement).innerHTML
+    const newItem = `<li class="list-inline-item">
+                       ${newParent}
+                      </li>`;
+    const local = (localStorage.length + 1).toString()
+    window.localStorage.setItem(local , newItem);
 
   }
 

@@ -2,8 +2,8 @@
   <li class="list-inline-item" *ngFor="let animal of userList">
     <div class="card-category" [style.background-image]="'url('+ animal.image_link +')'"
  	    [style.width.px]="600" [style.height.px]="400">
-       <div class="favorite" >
-        <fa-icon  [class.d-none] = "isActive" (click)="onFavoriteClick($event.currentTarget)" [icon]="['fas', 'heart']"></fa-icon>
+       <div class="favorite" style="max-width: 20px;">
+        <fa-icon   (click)="onFavoriteClick($event.currentTarget)" [icon]="['fas', 'heart']"></fa-icon>
         <fa-icon class="favorite-icon d-none"  [icon]="['fas', 'heart']"></fa-icon>
        </div>
     </div>

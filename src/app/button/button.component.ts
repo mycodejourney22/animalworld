@@ -9,7 +9,12 @@ export class ButtonComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit(): void {
+  }
+
+  refresh($event){
+    window.location.reload();
   }
 
 }
