@@ -51,3 +51,18 @@ ul li {
 .img-list{
   background-color: #69EBD0;
 }
+
+@media (max-width: 560px) {
+
+  .card-category {
+    width: 313px
+  }
+
+  .text-bg {
+    width: 19rem;
+  }
+
+  h1 {
+    font-size: 17px;
+  }
+}
