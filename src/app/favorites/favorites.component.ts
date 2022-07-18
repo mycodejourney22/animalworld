@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewEncapsulation  } from '@angular/core';
-import { UrlHandlingStrategy } from '@angular/router';
-
 
 @Component({
   selector: 'app-favorites',

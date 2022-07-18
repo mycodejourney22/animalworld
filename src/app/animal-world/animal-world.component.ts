@@ -10,7 +10,6 @@ export class AnimalWorldComponent implements OnInit {
 
   url: string = 'https://zoo-animal-api.herokuapp.com/animals/rand/5';
   userList: any;
-  // isActive = false;
 
 
   constructor(private http:HttpClient) {
@@ -19,7 +18,7 @@ export class AnimalWorldComponent implements OnInit {
    }
 
   ngOnInit(){
-    console.log(this.getAnimal())
+    this.getAnimal()
   }
 
   getAnimal(){
